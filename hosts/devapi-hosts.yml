@@ -1,0 +1,93 @@
+generated: '2026-10-20'
+method: derived
+source: the pre-flight dossier, apis.yml pointers, spec servers, well-known, vendors -- nothing fetched here
+generator: derive-hosts.py
+summary:
+  hosts: 7
+  own: 3
+  other_domain: 4
+  platform: 0
+  roles:
+  - api
+  - docs
+  - marketing
+  - other
+  - website
+hosts:
+- host: api.com.br
+  found_by:
+  - contract-discovery
+  types: []
+  serves: []
+  registrable_domain: api.com.br
+  role: api
+  relation: other-domain
+- host: api.tivit.com
+  found_by:
+  - contract-discovery
+  types: []
+  serves: []
+  registrable_domain: tivit.com
+  role: api
+  relation: other-domain
+- host: app.devapi.com.br
+  found_by:
+  - probed
+  - site-links
+  - contract-discovery
+  - well-known
+  types: []
+  serves: []
+  registrable_domain: devapi.com.br
+  role: other
+  relation: own
+- host: devapi.com.br
+  found_by:
+  - pointer
+  - probed
+  - contract-discovery
+  - well-known
+  types:
+  - Website
+  serves: []
+  registrable_domain: devapi.com.br
+  role: website
+  relation: own
+- host: docs.devapi.com.br
+  found_by:
+  - pointer
+  - probed
+  - site-links
+  - docs-index
+  - contract-discovery
+  - well-known
+  types:
+  - Documentation
+  serves:
+  - docs
+  registrable_domain: devapi.com.br
+  role: docs
+  relation: own
+- host: tivit.com
+  found_by:
+  - pointer
+  - apis[]
+  - probed
+  - site-links
+  - well-known
+  types:
+  - Blog
+  serves:
+  - docs
+  registrable_domain: tivit.com
+  role: marketing
+  relation: other-domain
+- host: your-docusaurus-site.example.com
+  found_by:
+  - docs-index
+  types: []
+  serves:
+  - docs
+  registrable_domain: example.com
+  role: other
+  relation: other-domain

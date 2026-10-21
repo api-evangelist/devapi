@@ -1,23 +1,70 @@
 aid: devapi
+
 name: TIVIT
-description: 'TIVIT is a company surfaced via the API Evangelist harvest backlog (source: g2-catalog)
-  and added to the network as a stub for full-pipeline profiling.'
+
+description: 'TIVIT is a company surfaced via the API Evangelist harvest backlog (source: g2-catalog) and added to the network as a stub for full-pipeline
+  profiling.'
+
 url: https://raw.githubusercontent.com/api-evangelist/devapi/refs/heads/main/apis.yml
+
 x-type: company
+
 x-source: harvest:g2-catalog
-x-tier: stub
-x-tier-reason: harvest
+
+x-tier: profiled
+x-tier-reason: enrichment pass 2026-10-20 (modular-v1; was harvest)
+
 specificationVersion: '0.20'
+
 created: '2026-10-20'
+
 modified: '2026-10-20'
+
 tags:
-- Company
-apis: []
+- Integration Platform
+- API Management
+- iPaaS
+- Digital Transformation
+- Workflow Automation
+
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+
 common:
+- type: Vendors
+  url: vendors/devapi-vendors.yml
+- type: Hosts
+  url: hosts/devapi-hosts.yml
+- type: Blog
+  url: https://tivit.com/blog
+- type: Documentation
+  url: https://docs.devapi.com.br/
+- type: DomainSecurity
+  url: security/devapi-domain-security.yml
 - type: Website
   url: https://devapi.com.br/
+
+apis:
+- name: TIVIT DevAPI
+  description: Developer API portal for TIVIT services.
+  humanURL: https://tivit.com/devapi/
+  baseURL: null
+  aid: devapi:tivit-devapi
+
+x-coverage:
+  state: unreadable
+  reason: js-rendered-docs
+  detail: The developer portal at https://tivit.com/devapi/ loads content via JavaScript, preventing machine‑readable discovery of OpenAPI specifications.
+  evidence:
+  - url: https://tivit.com/devapi/
+    status: 200
+  checked: '2026-10-20'
+x-enrichment:
+  date: '2026-10-20'
+  status: enriched
+  artifacts_added: 7
+  pass: modular-v1
+  engine: identity=local,contract=local,surfaces=local,docs=local,regulatory=local
